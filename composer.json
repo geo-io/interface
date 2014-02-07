@@ -1,0 +1,32 @@
+{
+    "name": "geo-io/interface",
+    "description": "Geo I/O base interfaces and constants.",
+    "keywords": [
+        "geo",
+        "io",
+        "geometry"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jan Sorgalla",
+            "email": "jsorgalla@googlemail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "GeoIO\\": "src/"
+        },
+        "files": [
+            "src/constants.php"
+        ]
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1-dev"
+        }
+    }
+}
