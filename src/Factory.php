@@ -2,7 +2,7 @@
 
 namespace GeoIO;
 
-interface FactoryInterface
+interface Factory
 {
     public function createPoint($dimension, array $coordinates, $srid = null);
     public function createLineString($dimension, array $points, $srid = null);

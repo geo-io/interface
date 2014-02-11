@@ -1,6 +1,6 @@
 {
     "name": "geo-io/interface",
-    "description": "Geo I/O base interfaces and constants.",
+    "description": "Geo I/O base interfaces.",
     "keywords": [
         "geo",
         "io",
@@ -19,10 +19,7 @@
     "autoload": {
         "psr-4": {
             "GeoIO\\": "src/"
-        },
-        "files": [
-            "src/constants.php"
-        ]
+        }
     },
     "extra": {
         "branch-alias": {
