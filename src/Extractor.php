@@ -73,7 +73,7 @@ interface Extractor
      * @param mixed $multiLineString
      * @return array|Traversable
      */
-    public function extractLineStringsMultiLineString($multiLineString);
+    public function extractLineStringsFromMultiLineString($multiLineString);
 
     /**
      * @param mixed $multiPolygon
