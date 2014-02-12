@@ -22,108 +22,68 @@ interface Extractor
      * @param mixed $geometry
      * @return string One of the Extractor::TYPE_* constants
      */
-    public function type($geometry);
+    public function extractType($geometry);
 
     /**
-     * Returns:
+     * @param mixed $geometry
+     * @return string One of the Dimension::DIMENSION_* constants
+     */
+    public function extractDimension($geometry);
+
+    /**
+     * @param mixed $geometry
+     * @return integer|null
+     */
+    public function extractSrid($geometry);
+
+    /**
+     * Structure of the returned array:
      *
      * [
-     *     'dimension' => $dimension, // string (One of the Dimension::DIMENSION_* constants)
-     *     'coordinates' => [
-     *         'x' => $x, // float
-     *         'y' => $y, // float
-     *         'z' => $z, // float|null
-     *         'm' => $m  // float|null
-     *     ],
-     *     'srid' => $srid // integer|null
+     *     'x' => $x, // float
+     *     'y' => $y, // float
+     *     'z' => $z, // float|null
+     *     'm' => $m  // float|null
      * ]
      *
      * @param mixed $point
      * @return array
      */
-    public function extractPoint($point);
+    public function extractCoordinatesFromPoint($point);
 
     /**
-     * Returns:
-     *
-     * [
-     *     'dimension' => $dimension, // string (One of the Dimension::DIMENSION_* constants)
-     *     'points' => $points, // array|Traversable
-     *     'srid' => $srid // integer|null
-     * ]
-     *
      * @param mixed $lineString
-     * @return array
+     * @return array|Traversable
      */
-    public function extractLineString($lineString);
+    public function extractPointsFromLineString($lineString);
 
     /**
-     * Returns:
-     *
-     * [
-     *     'dimension' => $dimension, // string (One of the Dimension::DIMENSION_* constants)
-     *     'linestrings' => $linestrings, // array|Traversable
-     *     'srid' => $srid // integer|null
-     * ]
-     *
      * @param mixed $polygon
-     * @return array
+     * @return array|Traversable
      */
-    public function extractPolygon($polygon);
+    public function extractLineStringsFromPolygon($polygon);
 
     /**
-     * Returns:
-     *
-     * [
-     *     'dimension' => $dimension, // string (One of the Dimension::DIMENSION_* constants)
-     *     'points' => $points, // array|Traversable
-     *     'srid' => $srid // integer|null
-     * ]
-     *
      * @param mixed $multiPoint
-     * @return array
+     * @return array|Traversable
      */
-    public function extractMultiPoint($multiPoint);
+    public function extractPointsFromMultiPoint($multiPoint);
 
     /**
-     * Returns:
-     *
-     * [
-     *     'dimension' => $dimension, // string (One of the Dimension::DIMENSION_* constants)
-     *     'linestrings' => $linestrings, // array|Traversable
-     *     'srid' => $srid // integer|null
-     * ]
-     *
      * @param mixed $multiLineString
-     * @return array
+     * @return array|Traversable
      */
-    public function extractMultiLineString($multiLineString);
+    public function extractLineStringsMultiLineString($multiLineString);
 
     /**
-     * Returns:
-     *
-     * [
-     *     'dimension' => $dimension, // string (One of the Dimension::DIMENSION_* constants)
-     *     'polygons' => $polygons, // array|Traversable
-     *     'srid' => $srid // integer|null
-     * ]
-     *
      * @param mixed $multiPolygon
-     * @return array
+     * @return array|Traversable
      */
-    public function extractMultiPolygon($multiPolygon);
+    public function extractPolygonsFromMultiPolygon($multiPolygon);
 
     /**
-     * Returns:
-     *
-     * [
-     *     'dimension' => $dimension, // string (One of the Dimension::DIMENSION_* constants)
-     *     'geometries' => $geometries, // array|Traversable
-     *     'srid' => $srid // integer|null
-     * ]
-     *
      * @param mixed $geometryCollection
-     * @return array
+     * @return array|Traversable
      */
-    public function extractGeometryCollection($geometryCollection);
+    public function extractGeometriesFromGeometryCollection($geometryCollection);
 }
