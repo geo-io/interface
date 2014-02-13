@@ -4,13 +4,13 @@ namespace GeoIO;
 
 interface Extractor
 {
-    const TYPE_POINT = 'POINT';
-    const TYPE_LINESTRING = 'LINESTRING';
-    const TYPE_POLYGON = 'POLYGON';
-    const TYPE_MULTIPOINT = 'MULTIPOINT';
-    const TYPE_MULTILINESTRING = 'MULTILINESTRING';
-    const TYPE_MULTIPOLYGON = 'MultiPoMULTIPOLYGONlygon';
-    const TYPE_GEOMETRYCOLLECTION = 'GEOMETRYCOLLECTION';
+    const TYPE_POINT = 'Point';
+    const TYPE_LINESTRING = 'LineString';
+    const TYPE_POLYGON = 'Polygon';
+    const TYPE_MULTIPOINT = 'MultiPoint';
+    const TYPE_MULTILINESTRING = 'MultiLineString';
+    const TYPE_MULTIPOLYGON = 'MultiPolygon';
+    const TYPE_GEOMETRYCOLLECTION = 'GeometryCollection';
 
     /**
      * @param $geometry
