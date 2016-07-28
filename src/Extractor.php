@@ -53,37 +53,37 @@ interface Extractor
 
     /**
      * @param mixed $lineString
-     * @return array|Traversable
+     * @return array|\Traversable
      */
     public function extractPointsFromLineString($lineString);
 
     /**
      * @param mixed $polygon
-     * @return array|Traversable
+     * @return array|\Traversable
      */
     public function extractLineStringsFromPolygon($polygon);
 
     /**
      * @param mixed $multiPoint
-     * @return array|Traversable
+     * @return array|\Traversable
      */
     public function extractPointsFromMultiPoint($multiPoint);
 
     /**
      * @param mixed $multiLineString
-     * @return array|Traversable
+     * @return array|\Traversable
      */
     public function extractLineStringsFromMultiLineString($multiLineString);
 
     /**
      * @param mixed $multiPolygon
-     * @return array|Traversable
+     * @return array|\Traversable
      */
     public function extractPolygonsFromMultiPolygon($multiPolygon);
 
     /**
      * @param mixed $geometryCollection
-     * @return array|Traversable
+     * @return array|\Traversable
      */
     public function extractGeometriesFromGeometryCollection($geometryCollection);
 }
