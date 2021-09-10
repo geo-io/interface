@@ -30,5 +30,10 @@
         "psr-4": {
             "GeoIO\\": "tests/"
         }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-main": "2.x-dev"
+        }
     }
 }
