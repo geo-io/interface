@@ -6,19 +6,22 @@ namespace GeoIO;
 
 interface Factory
 {
-    public function createPoint($dimension, array $coordinates, $srid = null);
+    /**
+     * @param array{x: int, y: int, z: float|null, m: float|null} $coordinates
+     */
+    public function createPoint(int $dimension, array $coordinates, ?int $srid = null): mixed;
 
-    public function createLineString($dimension, array $points, $srid = null);
+    public function createLineString(int $dimension, iterable $points, ?int $srid = null): mixed;
 
-    public function createLinearRing($dimension, array $points, $srid = null);
+    public function createLinearRing(int $dimension, iterable $points, ?int $srid = null): mixed;
 
-    public function createPolygon($dimension, array $lineStrings, $srid = null);
+    public function createPolygon(int $dimension, iterable $lineStrings, ?int $srid = null): mixed;
 
-    public function createMultiPoint($dimension, array $points, $srid = null);
+    public function createMultiPoint(int $dimension, iterable $points, ?int $srid = null): mixed;
 
-    public function createMultiLineString($dimension, array $lineStrings, $srid = null);
+    public function createMultiLineString(int $dimension, iterable $lineStrings, ?int $srid = null): mixed;
 
-    public function createMultiPolygon($dimension, array $polygons, $srid = null);
+    public function createMultiPolygon(int $dimension, iterable $polygons, ?int $srid = null): mixed;
 
-    public function createGeometryCollection($dimension, array $geometries, $srid = null);
+    public function createGeometryCollection(int $dimension, iterable $geometries, ?int $srid = null): mixed;
 }

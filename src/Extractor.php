@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace GeoIO;
 
-use Traversable;
-
 interface Extractor
 {
     public const TYPE_POINT = 'Point';
@@ -16,36 +14,25 @@ interface Extractor
     public const TYPE_MULTIPOLYGON = 'MultiPolygon';
     public const TYPE_GEOMETRYCOLLECTION = 'GeometryCollection';
 
-    /**
-     * @param $geometry
-     *
-     * @return bool
-     */
-    public function supports($geometry);
+    public function supports(mixed $geometry): bool;
 
     /**
-     * @param mixed $geometry
-     *
-     * @return string One of the Extractor::TYPE_* constants
+     * Must return one of the Extractor::TYPE_* constants.
      */
-    public function extractType($geometry);
+    public function extractType(mixed $geometry): string;
 
     /**
-     * @param mixed $geometry
-     *
-     * @return string One of the Dimension::DIMENSION_* constants
+     * Must return one of the Dimension::DIMENSION_* constants.
      */
-    public function extractDimension($geometry);
+    public function extractDimension(mixed $geometry): string;
 
     /**
-     * @param mixed $geometry
-     *
-     * @return int|null
+     * Must return the SRID if available, null otherwise.
      */
-    public function extractSrid($geometry);
+    public function extractSrid(mixed $geometry): ?int;
 
     /**
-     * Structure of the returned array:.
+     * Must return an array with the following structure.
      *
      * [
      *     'x' => $x, // float
@@ -54,51 +41,19 @@ interface Extractor
      *     'm' => $m  // float|null
      * ]
      *
-     * @param mixed $point
-     *
-     * @return array
+     * @return array{x: int, y: int, z: float|null, m: float|null}
      */
-    public function extractCoordinatesFromPoint($point);
+    public function extractCoordinatesFromPoint(mixed $point): array;
 
-    /**
-     * @param mixed $lineString
-     *
-     * @return array|Traversable
-     */
-    public function extractPointsFromLineString($lineString);
+    public function extractPointsFromLineString(mixed $lineString): iterable;
 
-    /**
-     * @param mixed $polygon
-     *
-     * @return array|Traversable
-     */
-    public function extractLineStringsFromPolygon($polygon);
+    public function extractLineStringsFromPolygon(mixed $polygon): iterable;
 
-    /**
-     * @param mixed $multiPoint
-     *
-     * @return array|Traversable
-     */
-    public function extractPointsFromMultiPoint($multiPoint);
+    public function extractPointsFromMultiPoint(mixed $multiPoint): iterable;
 
-    /**
-     * @param mixed $multiLineString
-     *
-     * @return array|Traversable
-     */
-    public function extractLineStringsFromMultiLineString($multiLineString);
+    public function extractLineStringsFromMultiLineString(mixed $multiLineString): iterable;
 
-    /**
-     * @param mixed $multiPolygon
-     *
-     * @return array|Traversable
-     */
-    public function extractPolygonsFromMultiPolygon($multiPolygon);
+    public function extractPolygonsFromMultiPolygon(mixed $multiPolygon): iterable;
 
-    /**
-     * @param mixed $geometryCollection
-     *
-     * @return array|Traversable
-     */
-    public function extractGeometriesFromGeometryCollection($geometryCollection);
+    public function extractGeometriesFromGeometryCollection(mixed $geometryCollection): iterable;
 }
