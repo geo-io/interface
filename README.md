@@ -6,36 +6,15 @@ Geo I/O Interface
 
 Geo I/O base interfaces, enums and value objects.
 
-Interfaces
---
-
-### Factory
-
-This interface used by the Geo I/O parser implementations to create the actual
-geometric objects from the parsed representations.
-
-### Extractor
-
-This interface is used by the Geo I/O generator implementations to extract data
-from geometric objects for the generated geometric representations.
-
-Enums
---
-
-### Dimension
-
-This class provides constants to define the dimension of geometric objects.
-
-### GeometryType
-
-This class provides constants to define the type of geometric objects.
-
-Value Objects
---
-
-### Coordinates
-
-This class represents coordinates with x, y, z and m properties.
+* [Installation](#installation)
+* [Interfaces](#interfaces)
+  * [Factory](#factory)
+  * [Extractor](#extractor)
+* [Enums](#enums)
+  * [Dimension](#dimension)
+  * [GeometryType](#geometrytype)
+* [Value Objects](#value-objects)
+  * [Coordinates](#Coordinates)
 
 Installation
 --
@@ -47,6 +26,49 @@ available versions.
 ```bash
 composer require geo-io/interface
 ```
+
+Interfaces
+--
+
+### Factory
+
+This [interface](src/Factory.php) is used by the Geo I/O parser implementations
+to create the actual geometric objects from the parsed representations.
+
+#### Implementations
+
+* [Geo I/O Geometry](https://github.com/geo-io/geometry)
+* [Geo I/O GeoJSON](https://github.com/geo-io/geojson)
+
+### Extractor
+
+This [interface](src/Extractor.php) is used by the Geo I/O generator
+implementations to extract data  from geometric objects for the generated
+geometric representations.
+
+* [Geo I/O Geometry](https://github.com/geo-io/geometry)
+* [Geo I/O GeoJSON](https://github.com/geo-io/geojson)
+
+Enums
+--
+
+### Dimension
+
+This [class](src/Dimension.php) provides constants to define the dimension of
+geometric objects.
+
+### GeometryType
+
+This [class](src/GeometryType.php) provides constants to define the type of
+geometric objects.
+
+Value Objects
+--
+
+### Coordinates
+
+This [class](src/Coordinates.php) represents coordinates with `x`, `y` and
+optional `z` and `m` properties.
 
 License
 --
