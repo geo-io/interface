@@ -14,22 +14,22 @@ use function is_string;
 final class Dimension
 {
     /**
-     * Two-Dimension Geometry, eg. POINT(x, y).
+     * Two-Dimension Geometry, e.g. POINT(x, y).
      */
     public const DIMENSION_2D = '2D';
 
     /**
-     * Three-Dimension Geometry, eg. POINT(x, y, z).
+     * Three-Dimension Geometry, e.g. POINT(x, y, z).
      */
     public const DIMENSION_3DZ = '3DZ';
 
     /**
-     * Two-Dimension Measured Geometry, eg. POINT(x, y, m).
+     * Two-Dimension Measured Geometry, e.g. POINT(x, y, m).
      */
     public const DIMENSION_3DM = '3DM';
 
     /**
-     * Three-Dimension Measured Geometry, eg. POINT(x, y, z, m).
+     * Three-Dimension Measured Geometry, e.g. POINT(x, y, z, m).
      */
     public const DIMENSION_4D = '4D';
 

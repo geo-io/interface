@@ -21,7 +21,7 @@ interface Factory
      * Creates a LineString for the given dimension, optional SRID and Points.
      *
      * The `$points` arguments yields Points created through the createPoint()
-     * method from the factory.
+     * method from this Factory.
      *
      * If the iterable does not yield any Points, it should create an empty
      * LineString.
@@ -36,7 +36,7 @@ interface Factory
      * Creates a LinearRing for the given dimension, optional SRID and Points.
      *
      * The `$points` arguments yields Points created through the createPoint()
-     * method from the factory.
+     * method from this Factory.
      *
      * If the iterable does not yield any Points, it should create an empty
      * LinearRing.
@@ -56,7 +56,7 @@ interface Factory
      * LinearRings.
      *
      * The `$linearRings` arguments yields LinearRings created through the
-     * createLinearRing() method from the factory.
+     * createLinearRing() method from this Factory.
      *
      * If the iterable does not yield any LinearRings, it should create an empty
      * Polygon.
@@ -70,8 +70,9 @@ interface Factory
     /**
      * Creates a MultiPoint for the given dimension, optional SRID and
      * Points.
+     *
      * The `$points` arguments yields Points created through the createPoint()
-     * method from the factory.
+     * method from this Factory.
      *
      * If the iterable does not yield any Points, it should create an empty
      * MultiPoint.
@@ -85,8 +86,9 @@ interface Factory
     /**
      * Creates a MultiLineString for the given dimension, optional SRID and
      * LineStrings.
+     *
      * The `$lineString` arguments yields LineStrings created through the
-     * createLineString() method from the factory.
+     * createLineString() method from this Factory.
      *
      * If the iterable does not yield any LineStrings, it should create an empty
      * MultiLineString.
@@ -100,8 +102,9 @@ interface Factory
     /**
      * Creates a MultiPolygon for the given dimension, optional SRID and
      * Polygons.
+     *
      * The `$polygons` arguments yields Polygons created through the
-     * createPolygon() method from the factory.
+     * createPolygon() method from this Factory.
      *
      * If the iterable does not yield any Polygons, it should create an empty
      * MultiPolygon.
@@ -115,8 +118,9 @@ interface Factory
     /**
      * Creates a GeometryCollection for the given dimension, optional SRID and
      * geometries.
+     *
      * The `$geometries` arguments yields geometries created through any of the
-     * create*() methods from the factory.
+     * create*() methods from this Factory.
      *
      * If the iterable does not yield any geometries, it should create an empty
      * GeometryCollection.
