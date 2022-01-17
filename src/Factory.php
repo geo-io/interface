@@ -12,7 +12,7 @@ interface Factory
      * If the Coordinates argument is `null`, it should create an empty point.
      */
     public function createPoint(
-        string $dimension,
+        Dimension $dimension,
         ?int $srid,
         ?Coordinates $coordinates,
     ): mixed;
@@ -27,7 +27,7 @@ interface Factory
      * LineString.
      */
     public function createLineString(
-        string $dimension,
+        Dimension $dimension,
         ?int $srid,
         iterable $points,
     ): mixed;
@@ -46,7 +46,7 @@ interface Factory
      * LinearRing, it can return a LineString instead.
      */
     public function createLinearRing(
-        string $dimension,
+        Dimension $dimension,
         ?int $srid,
         iterable $points,
     ): mixed;
@@ -62,7 +62,7 @@ interface Factory
      * Polygon.
      */
     public function createPolygon(
-        string $dimension,
+        Dimension $dimension,
         ?int $srid,
         iterable $linearRings,
     ): mixed;
@@ -78,7 +78,7 @@ interface Factory
      * MultiPoint.
      */
     public function createMultiPoint(
-        string $dimension,
+        Dimension $dimension,
         ?int $srid,
         iterable $points,
     ): mixed;
@@ -94,7 +94,7 @@ interface Factory
      * MultiLineString.
      */
     public function createMultiLineString(
-        string $dimension,
+        Dimension $dimension,
         ?int $srid,
         iterable $lineStrings,
     ): mixed;
@@ -110,7 +110,7 @@ interface Factory
      * MultiPolygon.
      */
     public function createMultiPolygon(
-        string $dimension,
+        Dimension $dimension,
         ?int $srid,
         iterable $polygons,
     ): mixed;
@@ -126,7 +126,7 @@ interface Factory
      * GeometryCollection.
      */
     public function createGeometryCollection(
-        string $dimension,
+        Dimension $dimension,
         ?int $srid,
         iterable $geometries,
     ): mixed;

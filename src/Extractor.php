@@ -13,17 +13,13 @@ interface Extractor
 
     /**
      * Extracts the type of the given geometry.
-     *
-     * Must return one of the GeometryType::* constants.
      */
-    public function extractType(mixed $geometry): string;
+    public function extractType(mixed $geometry): GeometryType;
 
     /**
      * Extracts the dimension of the given geometry.
-     *
-     * Must return one of the Dimension::* constants.
      */
-    public function extractDimension(mixed $geometry): string;
+    public function extractDimension(mixed $geometry): Dimension;
 
     /**
      * Extracts the SRID of the given geometry.
