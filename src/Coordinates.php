@@ -7,7 +7,7 @@ namespace GeoIO;
 /**
  * @psalm-immutable
  */
-class Coordinates
+final class Coordinates
 {
     public function __construct(
         public float $x,
