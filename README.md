@@ -2,7 +2,7 @@ Geo I/O Interface
 ==
 
 [![Build Status](https://github.com/geo-io/interface/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/geo-io/interface/actions/workflows/ci.yml)
-[![Coverage Status](https://coveralls.io/repos/geo-io/interface/badge.svg?branch=main&service=github)](https://coveralls.io/github/geo-io/interface?branch=main)
+[![Coverage Status](https://coveralls.io/repos/github/geo-io/interface/badge.svg?branch=main)](https://coveralls.io/github/geo-io/interface?branch=main)
 
 Geo I/O base interfaces, enums and value objects.
 
