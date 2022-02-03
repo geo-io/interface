@@ -54,12 +54,12 @@ Enums
 
 ### Dimension
 
-This [class](src/Dimension.php) provides constants to define the dimension of
+This [enum](src/Dimension.php) provides constants to define the dimension of
 geometric objects.
 
 ### GeometryType
 
-This [class](src/GeometryType.php) provides constants to define the type of
+This [enum](src/GeometryType.php) provides constants to define the type of
 geometric objects.
 
 Value Objects
